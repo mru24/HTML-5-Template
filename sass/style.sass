@@ -1,16 +1,29 @@
 
+// COLORS
+$mainLT: white
+$mainDK: black
+
+$secondaryLT: #bbb
+$secondaryDK: #666
+
+
 // MIXINS
 @mixin transition
   transition: all .4s ease-in-out
+
 @mixin text-shadow-DK
   text-shadow: 5px 5px 7px #333
 
-@mixin xsm
-	@media screen and (max-width : 320px)
+// MEDIA QUERIES
+
+  // DESKTOP FIRST
+
+@mixin xs
+	@media screen and (max-width : 480px)
 		@content
 
 @mixin sm
-	@media screen and (max-width: 480px)
+	@media screen and (max-width: 580px)
 		@content
 
 @mixin md
@@ -21,7 +34,54 @@
 	@media screen and (max-width : 992px)
 		@content
 
-
-@mixin xlg
+@mixin xl
 	@media screen and (max-width : 1200px)
 		@content
+
+  // MOBILE FIRST
+
+@mixin xs
+	@media screen and (min-width : 480px)
+		@content
+
+@mixin sm
+	@media screen and (min-width: 580px)
+		@content
+
+@mixin md
+	@media screen and (min-width : 768px)
+		@content
+
+@mixin lg
+	@media screen and (min-width : 992px)
+		@content
+
+@mixin xl
+	@media screen and (min-width : 1200px)
+		@content
+
+
+// GENERAL
+a,
+a:active,
+a:visited,
+a:hover
+  color: inherit
+  text-decoration: none
+
+ul,
+li
+  list-style: none
+
+// CLASSES
+
+  // ARROW TRIANGLE
+.arrow-down
+  position: absolute
+  bottom: 10px
+  left: 50%
+  transform: translateY(-50%)
+  outline: none
+  border-top: 28px solid white
+  border-left: 32px solid transparent
+  border-right: 32px solid transparent
